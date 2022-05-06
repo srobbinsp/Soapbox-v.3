@@ -1,0 +1,132 @@
+---
+title: "Soapbox Competition Research"
+author: "Research Team"
+date: "Shane Robbins, Nikolai Baldwin, & Chase Giles"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+always_allow_html: true
+  
+---
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+
+library(mosaic)
+library(tidyverse)
+library(plotly)
+library(rmarkdown)
+library(prettydoc)
+library(knitr)
+
+```
+
+## Eco-friendly Targets
+**Target Audience Characteristics**
+
+
+*Youth and Millennials*
+
+Empirical research has shown that youth's consumption behaviors are positively related with and influenced by green knowledge and attitude [Amoako et al. (2020)](https://www.emerald.com/insight/content/doi/10.1108/IJPPM-12-2019-0595/full/pdf).
+
+
+It was also found that college age millennial's intrinsic desire for green consumption was contingent upon their frugal rationale. Since millennials are in early stages of financial development, it would be consistent with the idea that they would accentuate saving money [Naderi & Steenburg (2017)](https://www.emerald.com/insight/content/doi/10.1108/YC-08-2017-00722/full/pdf?title=me-first-then-the-environment-young-millennials-as-green-consumers).
+
+Green consumption for this group is also related to their intrinsic motive to help the environment deriving from their attachment to nature and striving to keep a healthy environment around them [Arroyo & Lezama (2022)](https://www.icesi.edu.co/revistas/index.php/estudios_gerenciales/article/view/4701).
+
+*Millennials, Gen x, and Boomers*
+
+Baby boomers and millennials both came of age during a time of environmental awareness [Delafrooz et al. (2014)](https://www.qscience.com/content/journals/10.5339/connect.2014.5). The baby boomer generation has been shown to report a higher affinity to consuming green than Generation X and Millennials. Millennials and Generation X showed no differences [Squires (2019)](https://escholarship.org/uc/item/6f91213q). However, there was a weak relationship with actual number of green purchases and reported green values.
+
+**Target Audience Demographics**
+
+*Ideal Demographics*
+
+Evidence has found that those who are consciously consuming green are more likely to have more formal education, earn more money, and are female [Roberts (1999)](https://www.sciencedirect.com/science/article/pii/0148296395001506?via%3Dihub). 
+
+
+It was also shown that Democrats supported green movements more than Republicans did and have a higher concern towards the environment than Republicans do on average [Jones (2022)](https://news.gallup.com/poll/391679/climate-change-proposals-favored-solid-majorities.aspx). Also, Democrats on average feel that environmental preservation should be a priority even if it means sacrificing energy produced from natural gasses, petroleum and coal [Jones (2022)](https://news.gallup.com/poll/391319/americans-energy-worries-surge.aspx). 
+
+
+Studies have shows that more women on average care more for the environment than men do, 
+
+*Non-ideal Demographics*
+
+The target demographics for our non-ideal audience has found to be those who are male, have less formal education, White, and of the Republican party.
+
+```{r message=FALSE, warning=FALSE, echo=FALSE} 
+
+library(tinytex)
+
+GlobalWarmingConcerns <- c(
+  "Worry a Great Deal",
+  "Will Pose Serious Risk",
+  "Human Caused")
+GWCMen <- c(59, 38, 60)
+GWCWomen <- c(70, 50, 70)
+GWCData <- data.frame(GlobalWarmingConcerns, GWCMen, GWCWomen)
+
+GWCfig <- plot_ly(GWCData,
+                  x = ~GlobalWarmingConcerns, 
+                  y = ~GWCMen,
+                  type = "bar",
+                  name = "Men",
+                  marker = list(color = "steelblue"))
+GWCfig <- GWCfig %>% 
+  add_trace(
+    y = ~GWCWomen,
+    name = "Women",
+    marker = list(color = "plum"))
+GWCfig <- GWCfig %>%
+  layout(
+    title = "Global Warming Views by Gender",
+    xaxis = list(
+      title = "Global Warming Concerns"),
+    yaxis = list(
+      title = "Percentage of Global Warming Concern"),
+    barmode = "stack")
+GWCfig
+  
+```
+
+
+```{r}
+
+
+
+```
+
+
+## Competition and Novelty
+**Involved Organizations**
+
+1. [Eden Projects](https://www.edenprojects.org/)
+
+    + Reforestation projects that work with other leaders involved in ecological projects.
+    + Work with [corporate partners](https://www.edenprojects.org/corporate-partners).
+    + [Foundation Partners](https://www.edenprojects.org/foundations).
+    + Individual donors and volunteers
+    
+2. [Jane Goodall Institute](https://www.janegoodall.org/)
+
+    + Global organization that is focused on protecting chimpanzees. 
+    + Have an [Online Learning Project](https://www.janegoodall.org/online-learning/).
+        - Roots & Shoots free online course to earn credits at the University of Colorado Boulder.
+    + [Project Fuel Efficient Stoves](https://www.janegoodall.org/fuel-efficient-stoves/)
+    + [Youth Project](https://news.janegoodall.org/2022/04/01/inspiring-youth-project-of-the-month-native-wildlife-oasis/?_ga=2.11668656.560155483.1651429028-550722974.1651429028#utm_source=rss&utm_medium=rss)
+    
+3. [5 Gyres](https://www.5gyres.org/)
+
+    + Mission: empowering action against the global health crisis of plastic pollution through science, education, and advocacy.
+    + Partnered with: Liquid Death, Moen, ProGrade Digital, Klean Kanteen, Everything but Water, and Peach Not Plastic.
+        - The above companies all have a plastic removal movement. 
+        
+4. [CO~2~OL Effect](https://www.cooleffect.org/projects)
+
+    + Mission is to reduce carbon emissions. 
+    + Public can purchase carbon offsets
+    + Partners with 3M, salesforce, nuun hydration, American Airlines, unity, Twitter, and many others.
+    + Here are some [projects](https://www.cooleffect.org/projects) they are doing currently to reduce carbon footprint.
+
+
+<!-- Real Estate, communities, -->
+  
